@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.0"
+
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+ext{
+    supportVersion ='27.1.1'
+    kotlinVersion = '1.3.31'
+    appcompatVersion = '1.1.0-rc01'//'1.0.2'
+    ktxVersion = '1.0.2'
+    constranitlayoutVersion = '1.1.3'
+    lifecycleVersion = '2.2.0-alpha02'
+    viewmodleKtx = '2.2.0-alpha02'
+    retrofitVersion = '2.6.0'
+    coroutinesVersion = '1.2.1'
+    okhttp3LogVersion = '3.12.1'
+    ankoVersion = '0.10.8'
+    materialVersion = '1.1.0-alpha07'
+
+    junitVersion = '4.12'
+    extUnitVersion = "1.1.0"
+    espressoVersion = "3.2.0"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.core:core-ktx:$ktxVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constranitlayoutVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodleKtx"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3LogVersion"
+    implementation "org.jetbrains.anko:anko-commons:$ankoVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$extUnitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+}
